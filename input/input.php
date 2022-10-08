@@ -1,6 +1,6 @@
 <?php
 
-$kotak_input = fungsi_teks_warna_hijau_terang_tebal("[").fungsi_teks_warna_kuning_terang("input").fungsi_teks_warna_hijau_terang_tebal("]");
+$kotak_input = fungsi_teks_warna_hijau_terang_tebal("[").fungsi_teks_warna_kuning_terang("input").fungsi_teks_warna_hijau_terang_tebal("] ");
 
 function fungsi_input($judul){
 	$a = readline($judul);

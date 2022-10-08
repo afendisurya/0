@@ -1,12 +1,13 @@
 <?php
 
-function fungsi_notif_perhatian($isi_judul, $isi_notif){
+function f_notif_perhatian($isi_judul, $isi_notif){
+	global $ganti_baris;
 //include('0/warna/warna.php');
 //include('0/garis/garis.php');
 //include('0/waktu/waktu.php');
-	$a = "\n".$waktu_sekarang.$warna_isi_kuning_terang_tebal." $isi_judul \t= $isi_notif".$warna_reset;
+	$a = $ganti_baris.f_teks_kuning_tebal("[PERHATIAN] ".$isi_judul."\t= ".$isi_notif);
 	//echo "\n".$garis_dua;
-	echo $a;
+	return $a;
 	//echo "\n".$garis_dua;
 }
 

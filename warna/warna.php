@@ -43,6 +43,12 @@ function fungsi_teks_warna_kuning_terang($a){
 	return $teks;
 }
 
+function f_teks_kuning_tebal($a){
+	global $warna_reset, $warna_isi_kuning_terang_tebal;
+	$teks = $warna_isi_kuning_terang_tebal.$a.$warna_reset;
+	return $teks;
+}
+
 function fungsi_teks_warna_ungu_gelap($a){
 	global $warna_reset, $warna_isi_ungu_gelap;
 	$teks = $warna_isi_ungu_gelap.$a.$warna_reset;
