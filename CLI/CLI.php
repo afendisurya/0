@@ -18,6 +18,7 @@ function fungsi_cek_lokasi(){
 //	global $ganti_baris;
 //	echo $ganti_baris;
 	$a = getcwd();
+	//echo $a;
 	return $a;
 }
 
