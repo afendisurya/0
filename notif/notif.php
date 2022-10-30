@@ -5,9 +5,9 @@ function f_notif_perhatian($isi_judul, $isi_notif){
 //include('0/warna/warna.php');
 //include('0/garis/garis.php');
 //include('0/waktu/waktu.php');
-	$a = $ganti_baris.f_teks_kuning_tebal("[PERHATIAN] ".$isi_judul."\t= ".$isi_notif);
+	$a = $ganti_baris.f_teks_kuning_tebal("[PERHATIAN] ".$isi_judul."\t= ".$isi_notif).$ganti_baris;
 	//echo "\n".$garis_dua;
-	return $a;
+	echo $a;
 	//echo "\n".$garis_dua;
 }
 

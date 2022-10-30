@@ -1,7 +1,7 @@
 <?php
 
 function fungsi_cek_folder($x){
-	clearstatcache();
+//	clearstatcache();
 	$a = is_dir($x);
 	return $a;
 }
@@ -36,7 +36,7 @@ function f_cek_dan_buat_folder($target_folder, $v_jika_folder_belum_ada=null, $v
 		
 			fungsi_buat_folder($target_folder);
 		
-		}else{
+		}elseif(fungsi_cek_folder($target_folder)){
 		echo $v_jika_folder_ada;
 		// echo $ganti_baris."Folder Sudah Ada...";
 		}
@@ -45,7 +45,7 @@ function f_cek_dan_buat_folder($target_folder, $v_jika_folder_belum_ada=null, $v
 
 function fungsi_menulis_file($nama_folder, $nama_file, $isi_output){
 	global $garis_miring;
-	f_cek_dan_buat_folder($nama_folder, f_notif_perhatian("FOLDER", "CEK FOLDER BELUM ADA"), f_notif_perhatian("FOLDER", "MEMBUAT FOLDER"), f_notif_perhatian("FOLDER", "FOLDER SUDAH ADA"));
+	f_cek_dan_buat_folder($nama_folder, f_notif_perhatian("FOLDER", 'CEK FOLDER "$nama_folder" BELUM ADA'), f_notif_perhatian("FOLDER", 'MEMBUAT FOLDER "$nama_folder" '), f_notif_perhatian("FOLDER", 'FOLDER "$nama_folder" SUDAH ADA'));
 	$a = file_put_contents($nama_folder.$garis_miring.$nama_file, $isi_output);
 	return $a;
 }

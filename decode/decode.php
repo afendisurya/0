@@ -11,6 +11,12 @@ function fungsi_parsing_json($var_fungsi_parsing_json){
 	return $json;	
 }
 
+function f_decode_json($target_folder, $target_nama_json){
+	$file = file_get_contents($target_folder."/".$target_nama_json);
+	$json = json_decode($file, true);
+	return $json;
+}
+
 function fungsi_parsing_yaml_encode($x){
 	$yaml = yaml_emit($x);
 	return $yaml;
