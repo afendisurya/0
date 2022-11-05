@@ -33,18 +33,21 @@ function fungsi_pilihan_log($target_variabel, $target_folder, $target_nama){
 	}
 }
 
-function fungsi_pilihan_config($target_variabel_input, $target_lokasi_output, $nama_file, $target_isi_file, $target_config=null){
+function fungsi_pilihan_config($target_variabel_input, $target_folder, $nama_file, $target_isi_file, $target_config=null){
 	global $garis_miring, $ganti_baris;
 	if (preg_match('/tidak|no|ga|g|t|tdk|n/i', $target_variabel_input)) {
 		fungsi_info_custom("CONFIG", "Tidak Menyimpan Konfigurasi".$target_config);
 } elseif (preg_match('/iya|yes|ya|y|kuy/i', $target_variabel_input)) {
 	if ($target_config === null) {
-	fungsi_info_custom("CONFIG", 'Menyimpan Konfigurasi dalam folder "'.fungsi_teks_warna_merah_terang_tebal($target_lokasi_output).fungsi_teks_warna_kuning_terang('" & Dengan Nama "').fungsi_teks_warna_merah_terang_tebal($nama_file).'"');
+	fungsi_info_custom("CONFIG", 'Menyimpan Konfigurasi dalam folder "'.fungsi_teks_warna_merah_terang_tebal($target_folder).fungsi_teks_warna_kuning_terang('" & Dengan Nama "').fungsi_teks_warna_merah_terang_tebal($nama_file).'"');
 	}else{
-	fungsi_info_custom("CONFIG", 'Menyimpan Konfigurasi'.$target_config.'dalam folder "'.fungsi_teks_warna_merah_terang_tebal($target_lokasi_output).fungsi_teks_warna_kuning_terang('" & Dengan Nama "').fungsi_teks_warna_merah_terang_tebal($nama_file).'"');
+	fungsi_info_custom("CONFIG", 'Menyimpan Konfigurasi'.$target_config.'dalam folder "'.fungsi_teks_warna_merah_terang_tebal($target_folder).fungsi_teks_warna_kuning_terang('" & Dengan Nama "').fungsi_teks_warna_merah_terang_tebal($nama_file).'"');
 	}
 	fungsi_info_custom("CONFIG", "Sedang Menyimpan Konfigurasi".$target_config);
-	fungsi_menulis_file($target_lokasi_output, $nama_file, $target_isi_file);
+
+	 
+
+	fungsi_menulis_file($target_folder, $nama_file, $target_isi_file);
 	$ganti_baris.fungsi_info_custom("CONFIG", "Konfigurasi".$target_config."Tersimpan");
 	}
 	else{
