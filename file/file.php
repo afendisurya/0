@@ -1,6 +1,7 @@
 <?php
 
 function fungsi_cek_folder($x){
+	clearstatcache();
 	$a = is_dir($x);
 	return $a;
 }

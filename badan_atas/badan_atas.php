@@ -45,7 +45,7 @@ function fungsi_badan_atas($nama_sc, $nomor_versi) {
 		sleep(1);
 }
 
-function fungsi_judul($nama_skrip, $link_dukungan, $status_server) {
+function fungsi_judul($nama_skrip, $nomor_versi, $link_dukungan, $status_server) {
 require_once('0.php');
 global $garis_dua, $kotak_bantu, $spasi, $ganti_baris;
 
@@ -63,7 +63,6 @@ global $garis_dua, $kotak_bantu, $spasi, $ganti_baris;
 
 //	$json = fungsi_parsing_json($hasil_curl);
 $json = fungsi_info_jaringan();
-$nomor_versi = fungsi_cek_lokasi_sekarang(fungsi_cek_lokasi());
 
 	$wm = "
    ______________      
